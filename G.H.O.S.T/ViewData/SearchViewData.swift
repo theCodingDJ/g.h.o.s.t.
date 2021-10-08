@@ -22,4 +22,5 @@ struct SearchViewData {
     let description: String?
     let avatarViewData: AvatarViewData?
     let metadataViewData: MetadataViewData?
+    let webLink: String
 }

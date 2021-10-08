@@ -8,6 +8,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import SafariServices
 
 extension SearchViewModelInput {
     func bind(to viewController: SearchViewController) -> [Disposable] {
@@ -25,6 +26,14 @@ extension SearchViewModelInput {
                 .debounce(.milliseconds(666), scheduler: MainScheduler.instance) /// Wait 666 milliseconds before setting the value.
                 .subscribe(onNext: { [weak self] value in
                     self?.setPage(Int(value))
+                }),
+            viewController.tableView.rx.modelSelected(SearchViewData.self)
+                .map { $0.webLink }
+                .compactMap { URL(string: $0) }
+                .map { SFSafariViewController(url: $0) }
+                .subscribe(onNext: { safariViewController in
+                    safariViewController.modalPresentationStyle = .overCurrentContext
+                    viewController.navigationController?.present(safariViewController, animated: true)
                 })
         ]
     }

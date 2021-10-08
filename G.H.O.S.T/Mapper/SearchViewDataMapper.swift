@@ -14,13 +14,16 @@ protocol ViewDataMapper {
 class SearchViewDataMapper: ViewDataMapper {
     
     func mapViewData(from model: GithubRepo) -> SearchViewData? {
-        /// If no name is provided, this repo is a no-show.
-        guard let title = model.name else { return nil }
+        /// If no name and direct url are provided, this repo is a no-show.
+        guard let title = model.name,
+                let webLink = model.htmlUrl else { return nil }
         
         return SearchViewData(
             title: title,
             description: model.description,
             avatarViewData: .init(avatarUrl: model.avatarUrl.flatMap { URL(string: $0) }),
-            metadataViewData: .init(forksValue: String(format: "%d", model.forks), languageValue: model.language))
+            metadataViewData: .init(forksValue: String(format: "%d", model.forks), languageValue: model.language),
+            webLink: webLink
+        )
     }
 }
