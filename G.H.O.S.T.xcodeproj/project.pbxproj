@@ -34,6 +34,7 @@
 		0DFEC362270C914200FE6D40 /* SearchRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFEC361270C914200FE6D40 /* SearchRepository.swift */; };
 		0DFEC364270C96FD00FE6D40 /* ObservableType+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFEC363270C96FD00FE6D40 /* ObservableType+Ex.swift */; };
 		0DFEC367270C99F000FE6D40 /* SearchViewDataMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFEC366270C99F000FE6D40 /* SearchViewDataMapper.swift */; };
+		C5BB736F29D116110046826A /* AutolayoutWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5BB736E29D116110046826A /* AutolayoutWrapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,7 @@
 		0DFEC361270C914200FE6D40 /* SearchRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepository.swift; sourceTree = "<group>"; };
 		0DFEC363270C96FD00FE6D40 /* ObservableType+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObservableType+Ex.swift"; sourceTree = "<group>"; };
 		0DFEC366270C99F000FE6D40 /* SearchViewDataMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewDataMapper.swift; sourceTree = "<group>"; };
+		C5BB736E29D116110046826A /* AutolayoutWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutolayoutWrapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 				0DFEC332270BB47100FE6D40 /* SearchResultCell.swift */,
 				0DFEC345270BE90400FE6D40 /* MetadataView.swift */,
 				0DFEC338270BCC3C00FE6D40 /* AvatarView.swift */,
+				C5BB736E29D116110046826A /* AutolayoutWrapper.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 				0DFEC367270C99F000FE6D40 /* SearchViewDataMapper.swift in Sources */,
 				0DFEC351270C6F6500FE6D40 /* String+Ex.swift in Sources */,
 				0D6E1277270CB01B002C8D8D /* SearchViewController+Binding.swift in Sources */,
+				C5BB736F29D116110046826A /* AutolayoutWrapper.swift in Sources */,
 				0DFEC358270C7BE600FE6D40 /* NetworkInput.swift in Sources */,
 				0DFEC346270BE90400FE6D40 /* MetadataView.swift in Sources */,
 				0DFEC31F270BAEE400FE6D40 /* UILifeCycle.swift in Sources */,

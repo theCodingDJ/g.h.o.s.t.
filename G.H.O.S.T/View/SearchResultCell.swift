@@ -16,11 +16,14 @@ class SearchResultCell: UITableViewCell, UILifeCycle {
     private let contentSpacing = UIEdgeInsets(top: 16, left: 0, bottom: 8, right: 8)
     
     // MARK: - Subviews
-    lazy var avatarView = AvatarView()
-    lazy var contentStackView = UIStackView()
-    lazy var titleLabel = UILabel()
-    lazy var descriptionLabel = UILabel()
-    lazy var metadataView = MetadataView()
+    @Autolayout
+    private var avatarView = AvatarView()
+    @Autolayout
+    private var contentStackView = UIStackView()
+    
+    private lazy var titleLabel = UILabel()
+    private lazy var descriptionLabel = UILabel()
+    private lazy var metadataView = MetadataView()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -57,9 +60,6 @@ class SearchResultCell: UITableViewCell, UILifeCycle {
     }
     
     func setupConstraints() {
-        avatarView.translatesAutoresizingMaskIntoConstraints = false
-        contentStackView.translatesAutoresizingMaskIntoConstraints = false
-        
         avatarView.topAnchor.constraint(equalTo: contentView.topAnchor).activate()
         avatarView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).activate()
         avatarView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).activate()

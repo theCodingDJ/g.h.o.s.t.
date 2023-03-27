@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = UINavigationController(rootViewController: SearchViewController())
         window?.makeKeyAndVisible()
         
+        // Force disable dark mode.
         if #available(iOS 13.0, *) {
             window?.overrideUserInterfaceStyle = .light
         }

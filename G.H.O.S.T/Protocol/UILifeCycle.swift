@@ -26,6 +26,7 @@ protocol UILifeCycle {
     func setupConstraints()
     
     /// Call all the protocol methods in the correct order.
+    /// 
     func initialize()
 }
 

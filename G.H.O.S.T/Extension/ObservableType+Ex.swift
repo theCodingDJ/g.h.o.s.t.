@@ -31,17 +31,24 @@ extension ObservableType where Element == Result<NetworkResponse, Error> {
 }
 
 extension Driver where Element == PaginationViewData {
+    /// Maps the view data to a pagination string.
+    /// - Note: Because GitHub pagination starts at 1, the total is calculated using the formula *`((N+10)-1)/10`*
+    /// - Returns: A Driver of String type that represents either `pagination` or an `empty-state` string.
     func mapToPaginationString() -> Driver<String> {
         return map { value -> String in
             guard value.total > 0 else { return "No results" }
-            return "Page: \(value.currentPage) of \((value.total + 10 - 1) / 10)"
+            return "Page: \(value.currentPage) of \(((value.total + 10) - 1) / 10)"
         }
         .asDriver(onErrorJustReturn: "No results")
     }
+    
+    /// Maps the view data to the total pages number. Used to constraint the stepper.
+    /// - Note: Because GitHub pagination starts at 1, the total is calculated using the formula *`((N+10)-1)/10`*
+    /// - Returns: A Driver of String type that represents the total pages.[p
     func mapToPaginationTotalPages() -> Driver<Double> {
         return map { value -> Double in
             guard value.total > 0 else { return 1.0 }
-            return Double((value.total + 10 - 1) / 10)
+            return Double(((value.total + 10) - 1) / 10)
         }
         .asDriver(onErrorJustReturn: 1.0)
     }

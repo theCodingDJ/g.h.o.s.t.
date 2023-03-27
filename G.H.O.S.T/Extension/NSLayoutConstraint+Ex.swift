@@ -17,13 +17,4 @@ extension NSLayoutConstraint {
         isActive = true
         return self
     }
-    
-    /// Deactivates the layout constraint.
-    ///
-    /// - Returns: This constraint to allow chaining.
-    @discardableResult
-    public func deactivate() -> Self {
-        isActive = false
-        return self
-    }
 }

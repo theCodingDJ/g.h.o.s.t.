@@ -9,10 +9,14 @@ import UIKit
 
 class MetadataView: UIView, UILifeCycle {
     
-    lazy var forkIconView = UIImageView()
-    lazy var forkLabel = UILabel()
-    lazy var languageIconView = UIImageView()
-    lazy var languageLabel = UILabel()
+    @Autolayout
+    private var forkIconView = UIImageView()
+    @Autolayout
+    private var forkLabel = UILabel()
+    @Autolayout
+    private var languageIconView = UIImageView()
+    @Autolayout
+    private var languageLabel = UILabel()
     
     // MARK: - Metrics
     
@@ -46,11 +50,6 @@ class MetadataView: UIView, UILifeCycle {
     }
     
     func setupConstraints() {
-        forkIconView.translatesAutoresizingMaskIntoConstraints = false
-        forkLabel.translatesAutoresizingMaskIntoConstraints = false
-        languageIconView.translatesAutoresizingMaskIntoConstraints = false
-        languageLabel.translatesAutoresizingMaskIntoConstraints = false
-        
         /// Set the view's own height.
         heightAnchor.constraint(equalToConstant: 24).activate()
         

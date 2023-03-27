@@ -10,11 +10,16 @@ import RxSwift
 
 class SearchViewController: UIViewController, UILifeCycle {
     
-    // MARK: - Subviews
+    // MARK: - Search Controller
     lazy var searchController = UISearchController(searchResultsController: nil)
-    lazy var tableView = UITableView()
-    lazy var paginationStepperView = UIStepper()
-    lazy var paginationLabel = UILabel()
+    
+    // MARK: - Subviews
+    @Autolayout
+    var tableView = UITableView()
+    @Autolayout
+    var paginationStepperView = UIStepper()
+    @Autolayout
+    var paginationLabel = UILabel()
     
     // MARK: - ViewModel
     lazy var viewModel: SearchViewModelType = {
@@ -83,11 +88,7 @@ class SearchViewController: UIViewController, UILifeCycle {
         paginationLabel.textColor = .black
     }
     
-    func setupConstraints() {
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        paginationStepperView.translatesAutoresizingMaskIntoConstraints = false
-        paginationLabel.translatesAutoresizingMaskIntoConstraints = false
-        
+    func setupConstraints() {        
         tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).activate()
         tableView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor).activate()
         tableView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor).activate()

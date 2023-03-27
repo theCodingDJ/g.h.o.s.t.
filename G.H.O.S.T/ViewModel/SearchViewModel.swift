@@ -73,7 +73,7 @@ class SearchViewModel: SearchViewModelType {
     }
     
     // MARK: - SearchViewModelInput
-    /// Weird, but GitHub pagination starts with 1
+    /// Weird, but GitHub pagination starts at 1
     /// More info: https://developer.github.com/v3/#pagination
     private let pageRelay = BehaviorRelay<Int>(value: 1)
     func setPage(_ value: Int) {

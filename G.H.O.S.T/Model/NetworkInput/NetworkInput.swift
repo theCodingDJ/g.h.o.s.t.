@@ -15,7 +15,7 @@ struct NetworkInput {
     var asParameters: [String: Any] {
         let mirror = Mirror(reflecting: self)
         return Dictionary(uniqueKeysWithValues: mirror.children.lazy.map({ label, value in
-            guard let label = label else { return nil }
+            guard let label else { return nil }
             return (label, value)
         }).compactMap { $0 })
     }

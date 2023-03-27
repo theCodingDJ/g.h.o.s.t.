@@ -14,7 +14,8 @@ class AvatarView: UIView, UILifeCycle {
     private let avatarWidth: CGFloat = 64
     private let padding = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
     
-    lazy public var imageView = UIImageView()
+    @Autolayout
+    private var imageView = UIImageView()
     
     init() {
         super.init(frame: .zero)
@@ -40,8 +41,6 @@ class AvatarView: UIView, UILifeCycle {
     }
     
     func setupConstraints() {
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        
         imageView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: padding.top).activate()
         imageView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: padding.left).activate()
         safeAreaLayoutGuide.trailingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: padding.right).activate()
